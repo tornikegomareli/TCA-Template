@@ -7,12 +7,9 @@ import ComposableArchitecture
 // MARK: - View
 
 public struct ___FILEBASENAMEASIDENTIFIER___: View {
-  @ObservedObject
-  private var viewStore: ViewStoreOf<___VARIABLE_productName:identifier___>
   private let store: StoreOf<___VARIABLE_productName:identifier___>
 
   public init(store: StoreOf<___VARIABLE_productName:identifier___>) {
-    self.viewStore = .init(store, observe: { $0 })
     self.store = store
   }
 
@@ -21,7 +18,7 @@ public struct ___FILEBASENAMEASIDENTIFIER___: View {
       Text("Hello, ___VARIABLE_productName:identifier___!")
     }
     .task {
-      await viewStore
+      await store
         .send(.onAppear)
         .finish()
     }
@@ -40,3 +37,4 @@ public struct ___FILEBASENAMEASIDENTIFIER___: View {
     )
   )
 }
+

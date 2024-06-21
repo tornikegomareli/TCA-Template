@@ -2,7 +2,8 @@
 
 import ComposableArchitecture
 
-public struct ___VARIABLE_productName:identifier___: Reducer {
+@Reducer
+public struct ___VARIABLE_productName:identifier___ {
 
   public init() {}
 
